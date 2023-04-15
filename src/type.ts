@@ -17,7 +17,6 @@ export type PostEnum = {
 
 export type PutEnum = {
   id: string;
-  barcode: string;
   price: string;
   quantity: string;
   supplyTime: string;

@@ -8,6 +8,7 @@ import { Get } from "./components/Get";
 import { Post } from "./components/Post";
 import { Put } from "./components/Put";
 import { Delete } from "./components/Delete";
+import { Report } from "./components/Report";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
   {
     path: "/deletesale",
     element: <Delete type={false}/>,
+  },
+  {
+    path: "/getreport",
+    element: <Report />,
   },
 ]);
 
