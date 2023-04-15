@@ -1,7 +1,28 @@
-export interface Get {
-  fromDate: string;
-  fromTime: string;
-  toDate: string;
-  toTime: string;
+export type GetIdEnum = {
+  id: string;
+};
+
+export type GetEnum = {
   barcode: string;
-}
+  fromTime: string;
+  toTime: string;
+};
+
+export type PostEnum = {
+  barcode: string;
+  price: string;
+  quantity: string;
+  supplyTime: string;
+};
+
+export type PutEnum = {
+  id: string;
+  barcode: string;
+  price: string;
+  quantity: string;
+  supplyTime: string;
+};
+
+export type DeleteEnum = {
+  id: string;
+};

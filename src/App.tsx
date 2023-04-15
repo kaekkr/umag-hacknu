@@ -1,38 +1,47 @@
-import { useForm, SubmitHandler } from "react-hook-form";
-
-type GetId = {
-  id: string;
-};
+import { Link } from "react-router-dom";
 
 const App = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm<GetId>();
-  const onSubmit: SubmitHandler<GetId> = (data) => console.log(data);
-
-  console.log(watch("id"));
-
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
-      <div className="border border-orange-500 p-10">
-        <h1 className="text-center mb-10">Get Supply</h1>
-        <h1 className="text-center mb-5">Get Supply by id</h1>
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          <div>
-            <label htmlFor="">Id: </label>
-            <input
-              {...(register("id"), { required: true })}
-              className="border border-orange-500"
-            />
-          </div>
-
-          {errors.id && <span>Id is required</span>}
-
-          <button className="border border-orange-500 p-1">Submit</button>
-        </form>
+    <div className="w-screen h-screen flex justify-center items-center space-x-10">
+      <div className="border border-orange-500 p-5 space-y-5">
+        <h1 className="text-center text-2xl">Supply</h1>
+        <ul className="p-5 space-y-5">
+          <li className="underline underline-offset-8 hover:text-blue-500">
+            <Link to={"getsupply"}>Get supply</Link>
+          </li>
+          <li className="underline underline-offset-8 hover:text-blue-500">
+            <Link to={"getidsupply"}>Get supply by id</Link>
+          </li>
+          <li className="underline underline-offset-8 hover:text-blue-500">
+            <Link to={"postsupply"}>Create new supply</Link>
+          </li>
+          <li className="underline underline-offset-8 hover:text-blue-500">
+            <Link to={"putsupply"}>Change existing supply</Link>
+          </li>
+          <li className="underline underline-offset-8 hover:text-blue-500">
+            <Link to={"deletesupply"}>Delete existing supply</Link>
+          </li>
+        </ul>
+      </div>
+      <div className="border border-orange-500 p-5 space-y-5">
+        <h1 className="text-center text-2xl">Sale</h1>
+        <ul className="p-5 space-y-5">
+          <li className="underline underline-offset-8 hover:text-blue-500">
+            <Link to={"getsale"}>Get sale</Link>
+          </li>
+          <li className="underline underline-offset-8 hover:text-blue-500">
+            <Link to={"getidsale"}>Get sale by id</Link>
+          </li>
+          <li className="underline underline-offset-8 hover:text-blue-500">
+            <Link to={"postsale"}>Create new sale</Link>
+          </li>
+          <li className="underline underline-offset-8 hover:text-blue-500">
+            <Link to={"putsale"}>Change existing sale</Link>
+          </li>
+          <li className="underline underline-offset-8 hover:text-blue-500">
+            <Link to={"deletesale"}>Delete existing sale</Link>
+          </li>
+        </ul>
       </div>
     </div>
   );
